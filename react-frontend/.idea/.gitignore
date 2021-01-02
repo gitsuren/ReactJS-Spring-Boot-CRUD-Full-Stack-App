@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\BAJRACHARYA\work\projects\REACTJS\ReactJS-Spring-Boot-CRUD-Full-Stack-App\react-frontend\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

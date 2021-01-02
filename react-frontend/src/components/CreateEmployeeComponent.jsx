@@ -2,19 +2,27 @@ import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService';
 
 class CreateEmployeeComponent extends Component {
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
+    //
+    //     this.state = {
+    //         // step 2
+    //         id: this.props.match.params.id,
+    //         firstName: '',
+    //         lastName: '',
+    //         emailId: ''
+    //     }
+    //     this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
+    //     this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
+    //     this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this);
+    // }
 
-        this.state = {
-            // step 2
-            id: this.props.match.params.id,
-            firstName: '',
-            lastName: '',
-            emailId: ''
-        }
-        this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
-        this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
-        this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this);
+    state = {
+        // step 2
+        id: this.props.match.params.id,
+        firstName: '',
+        lastName: '',
+        emailId: ''
     }
 
     // step 3
@@ -50,16 +58,21 @@ class CreateEmployeeComponent extends Component {
         }
     }
     
-    changeFirstNameHandler= (event) => {
-        this.setState({firstName: event.target.value});
-    }
+    // changeFirstNameHandler= (event) => {
+    //     this.setState({firstName: event.target.value});
+    // }
+    //
+    // changeLastNameHandler= (event) => {
+    //     this.setState({lastName: event.target.value});
+    // }
+    //
+    // changeEmailHandler= (event) => {
+    //     this.setState({emailId: event.target.value});
+    // }
 
-    changeLastNameHandler= (event) => {
-        this.setState({lastName: event.target.value});
-    }
-
-    changeEmailHandler= (event) => {
-        this.setState({emailId: event.target.value});
+    changeHandler= (event) => {
+        const {name, value} = event.target;
+        this.setState({[name]: value});
     }
 
     cancel(){
@@ -88,17 +101,17 @@ class CreateEmployeeComponent extends Component {
                                         <div className = "form-group">
                                             <label> First Name: </label>
                                             <input placeholder="First Name" name="firstName" className="form-control" 
-                                                value={this.state.firstName} onChange={this.changeFirstNameHandler}/>
+                                                value={this.state.firstName} onChange={this.changeHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Last Name: </label>
                                             <input placeholder="Last Name" name="lastName" className="form-control" 
-                                                value={this.state.lastName} onChange={this.changeLastNameHandler}/>
+                                                value={this.state.lastName} onChange={this.changeHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Email Id: </label>
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
-                                                value={this.state.emailId} onChange={this.changeEmailHandler}/>
+                                                value={this.state.emailId} onChange={this.changeHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
